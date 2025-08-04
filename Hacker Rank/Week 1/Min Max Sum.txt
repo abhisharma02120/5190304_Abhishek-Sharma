@@ -1,0 +1,21 @@
+﻿#include <iostream>
+#include <algorithm> 
+using namespace std;
+void miniMaxSum(long long arr[5]) {
+    sort(arr, arr + 5);
+    long long minSum = 0, maxSum = 0;
+    for (int i = 0; i < 4; i++) {
+        minSum += arr[i];
+        maxSum += arr[i + 1];
+    }
+    cout << minSum << " " << maxSum << endl;
+}
+int main() {
+    long long arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+    miniMaxSum(arr);
+    return 0;
+}
