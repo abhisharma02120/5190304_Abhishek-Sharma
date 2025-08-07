@@ -1,0 +1,25 @@
+﻿#include <iostream>
+#include <string>
+#include <set>
+#include <cctype>
+using namespace std;
+
+string pangrams(string s) {
+    set<char> letters;
+    for (char ch : s) {
+        if (isalpha(ch)) {
+            letters.insert(tolower(ch));
+        }
+    }
+    if (letters.size() == 26) {
+        return "pangram";
+    } else {
+        return "not pangram";
+    }
+}
+int main() {
+    string s;
+    getline(cin, s);
+    cout << pangrams(s) << endl;
+    return 0;
+}
